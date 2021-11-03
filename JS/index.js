@@ -78,4 +78,7 @@ const colorSelect = color => {
     imgsTemplate(productsInventory[color].images);
 }
 
+(function() {
+    colorSelect("red");
+})();
 
