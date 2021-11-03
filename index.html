@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roses Details Page</title>
+    <link rel="stylesheet" href="/styles/styles.css">
+</head>
+<body>
+    <header>
+        <img src="/images/shopping-cart-10995.svg" alt="shopping-cart" id="shopping-cart"></img>
+        <div id="logo">
+            <h1 id="logo-left">Roses</h1>
+            <h1 id="logo-right">Market</h1>
+        </div>
+    </header>
+
+    <main>
+        <div id="product">
+            <h2 id="product-main-name">Roses</h2>
+            <h4>5679</h4>
+        </div> 
+        <article id="product-info">
+            <section id="product-details">
+                <div id="color-selecton">
+                    <label for="color-options">Select color: </label>
+                    <select name="color-options" id="color-options" onchange="colorSelect(this.value)"}>
+                        <option value="red">Red</option>
+                        <option value="pink">Pink</option>
+                        <option value="yellow">Yellow</option>
+                        <option value="blue">Blue</option>
+                    </select>
+                </div>
+                <div id="selection-details">
+                    <!-- inserts name, id, price, in stock information -->
+                </div>
+            </section> 
+            <section id="carousel">
+                <!-- inserts img background, buttons, indicators -->
+            </section>    
+        </article>
+    </main>
+
+    <footer>
+        <nav>
+            <a href="#product-main-name">Product Name</a>
+            <a href="#shopping-cart">Add to Cart</a>
+            <a href="#carousel">Images</a>
+        </nav>
+    </footer>
+    <script src="/JS/index.js"></script>
+</body>
+</html>

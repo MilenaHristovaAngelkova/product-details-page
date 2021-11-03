@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+body, header h1, main #product h2, main #product h4, main #selection-details h5, main #selection-details h6, main #selection-details span {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fce4fc;
+  color: #1f0a1f;
+}
+
+header {
+  background-color: #1f0a1f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+  position: relative;
+}
+
+header img {
+  position: absolute;
+  top: 15.8px;
+  left: 3%;
+}
+
+header #logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  font-size: 20px;
+}
+
+header #logo-left {
+  color: #f57df5;
+}
+
+header #logo-right {
+  color: #f15079;
+}
+
+header h1 {
+  font-family: 'Tangerine', cursive;
+}
+
+main #product {
+  margin: 1rem auto;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+main #product h2 {
+  font-weight: bold;
+  font-style: italic;
+}
+
+main #product h2, main #product h4 {
+  text-shadow: 0 1px 1px #f57df5;
+}
+
+main #product-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 2px solid #1f0a1f;
+  padding: 3px;
+}
+
+main #product-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 5px;
+}
+
+main #color-selecton label {
+  font-size: 0.8rem;
+}
+
+main #color-options {
+  border: 1px solid #1f0a1f;
+  border-radius: 10%;
+  font-size: 0.7rem;
+  cursor: pointer;
+  color: #1f0a1f;
+}
+
+main #selection-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+}
+
+main #selection-details h5 {
+  margin-top: 1rem;
+}
+
+main #selection-details span {
+  font-size: 0.7rem;
+}
+
+main #carousel {
+  margin: 10px auto;
+  padding-bottom: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+main #carousel img {
+  position: relative;
+  max-width: 10rem;
+  max-height: 14rem;
+}
+
+main #carousel button {
+  position: absolute;
+  top: 25%;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: white;
+  text-shadow: 1px 1px 1px #1f0a1f;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+main #carousel .backward {
+  left: 0;
+}
+
+main #carousel .foreward {
+  right: 0;
+}
+
+main #carousel span {
+  position: absolute;
+  top: 3%;
+  width: 5px;
+  height: 5px;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 50%;
+}
+
+main #carousel .indicator1 {
+  left: 45%;
+}
+
+main #carousel .indicator2 {
+  left: 55%;
+}
+
+main #carousel .roses {
+  display: none;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #1f0a1f;
+  padding: 10px;
+  font-size: 0.8rem;
+}
+
+footer a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #f57df5;
+  cursor: pointer;
+}
+
+footer a:hover {
+  color: #f15079;
+}
+
+@media screen and (min-width: 769px) {
+  header h1 {
+    font-size: 3rem;
+  }
+  main #product-info {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    margin: 0 30%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 3rem;
+  }
+  main #product,
+  main #color-selecton label {
+    font-size: 1.1rem;
+  }
+  main #color-options,
+  main #selection-details h6,
+  main #selection-details span {
+    font-size: 1rem;
+  }
+  main #selection-details h6,
+  main #selection-details span {
+    padding: 0.5rem 0;
+  }
+  main #selection-details h5 {
+    font-size: 1.1rem;
+  }
+  footer {
+    font-size: 1rem;
+  }
+  footer nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer a:hover::after {
+    color: #f57df5;
+  }
+  footer a::after {
+    content: "|";
+    margin: 10px;
+  }
+  footer a:last-child::after {
+    content: "";
+  }
+}
+/*# sourceMappingURL=styles.css.map */

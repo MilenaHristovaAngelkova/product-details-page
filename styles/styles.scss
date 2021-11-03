@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+@import "_variables";
+@import "_partials";
+
+body {
+    box-sizing: border-box;
+    @extend %extra-spacing;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(252, 228, 252);
+    color: $dark-purple;
+}
+
+header {
+    background-color: $dark-purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    position: relative;
+
+    img {
+        position: absolute;
+        top: (61.6px/2) - 15px;
+        left: 3%;
+    }
+
+    #logo {
+        display: flex; 
+        text-align: center;
+        font-size: 20px;
+        &-left{
+            color: $pink1;
+        }
+        &-right{
+            color: $pink2;
+        }
+    }
+
+    h1 {
+        font-family: 'Tangerine', cursive;
+        @extend %extra-spacing;
+    }   
+}
+
+main {
+    #product {
+        margin: 1rem auto;
+        font-size: $small-font;
+        text-align: center;
+
+        h2 {
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        h2, h4 {
+            @extend %extra-spacing;
+            text-shadow: 0 1px 1px $pink1;
+        }
+    }
+
+    #product-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 2px solid $dark-purple;
+        padding: 3px;
+    }
+
+    #product-details {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 5px;
+    }
+
+    #color-selecton label {
+        font-size: $small-font;
+    }
+
+    #color-options {
+        border: 1px solid $dark-purple;
+        border-radius: 10%;
+        font-size: $smaller-font;
+        cursor: pointer;
+        color: $dark-purple;
+    }
+
+    #selection-details {
+       display: flex;
+       flex-direction: column;
+       flex-wrap: wrap;
+       text-align: center;
+
+       h5, h6, span {
+            @extend %extra-spacing; 
+       }
+
+       h5 {
+           margin-top: 1rem;
+       }
+
+       span {
+           font-size: $smaller-font;           
+       }
+    }
+
+    #carousel {
+        margin: 10px auto;
+        padding-bottom: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        img {
+            position: relative;
+            max-width: 10rem;
+            max-height: 14rem;
+        }
+
+        button {
+            position: absolute;  
+            top: 25%;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            color: white;
+            text-shadow: 1px 1px 1px $dark-purple;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .backward {
+            left: 0;
+        }
+
+        .foreward {
+            right: 0;
+        }
+
+        span {
+            position: absolute;
+            top: 3%;
+            width: 5px;
+            height: 5px;
+            border: 1px solid #ccc;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        .indicator1 {
+            left: 45%;
+        }
+
+        .indicator2 {
+            left: 55%;
+        }
+
+        .roses {
+            display: none;
+        }
+    }
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: $dark-purple;
+    padding: 10px;
+    font-size: 0.8rem;
+
+    a {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        color: $pink1;
+        cursor: pointer;
+        &:hover {
+            color: $pink2;
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    header h1 {
+        font-size: 3rem;
+    }
+
+    main {
+        #product-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin: 0 30%;
+            align-items: flex-start;
+            padding: 3rem;
+        }
+
+        #product,
+        #color-selecton label {
+            font-size: 1.1rem;
+        }
+
+        #color-options,
+        #selection-details h6,
+        #selection-details span {
+            font-size: 1rem;
+        }
+
+        #selection-details h6,
+        #selection-details span {
+            padding: 0.5rem 0;
+        }
+
+        #selection-details h5 {
+            font-size: 1.1rem;
+        }
+    }
+
+    footer {
+        font-size: 1rem;
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+    
+        a:hover::after {
+            color: $pink1;
+        }
+    
+        a::after {
+            content: "|";
+            margin: 10px;
+        }
+    
+        a:last-child::after {
+            content: "";
+        }
+    }
+}
