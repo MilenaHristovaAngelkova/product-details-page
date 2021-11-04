@@ -152,6 +152,7 @@ main #carousel img {
   position: relative;
   max-width: 10rem;
   max-height: 14rem;
+  z-index: -1;
 }
 
 main #carousel button {
@@ -170,13 +171,24 @@ main #carousel .backward {
   left: 0;
 }
 
-main #carousel .foreward {
+main #carousel .forward {
   right: 0;
 }
 
-main #carousel span {
+main #carousel .spans-wrapper {
   position: absolute;
   top: 3%;
+  height: 8px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main #carousel span {
   width: 5px;
   height: 5px;
   border: 1px solid #ccc;
@@ -184,16 +196,12 @@ main #carousel span {
   border-radius: 50%;
 }
 
-main #carousel .indicator1 {
-  left: 45%;
+main #carousel .indicator {
+  margin-right: 0.5rem;
 }
 
-main #carousel .indicator2 {
-  left: 55%;
-}
-
-main #carousel .roses {
-  display: none;
+main #carousel .active {
+  background-color: #302f2f;
 }
 
 footer {
@@ -226,7 +234,7 @@ footer a:hover {
     display: grid;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
-    margin: 0 30%;
+    margin: 0 20%;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -247,6 +255,10 @@ footer a:hover {
   }
   main #selection-details h5 {
     font-size: 1.1rem;
+  }
+  main #carousel img {
+    max-width: 16rem;
+    max-height: 20rem;
   }
   footer {
     font-size: 1rem;

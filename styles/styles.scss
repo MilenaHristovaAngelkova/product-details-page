@@ -120,6 +120,7 @@ main {
             position: relative;
             max-width: 10rem;
             max-height: 14rem;
+            z-index: -1;
         }
 
         button {
@@ -138,13 +139,20 @@ main {
             left: 0;
         }
 
-        .foreward {
+        .forward {
             right: 0;
         }
 
-        span {
+        .spans-wrapper {
             position: absolute;
             top: 3%;
+            height: 8px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        span {
             width: 5px;
             height: 5px;
             border: 1px solid #ccc;
@@ -152,16 +160,12 @@ main {
             border-radius: 50%;
         }
 
-        .indicator1 {
-            left: 45%;
+        .indicator {
+            margin-right: 0.5rem;
         }
 
-        .indicator2 {
-            left: 55%;
-        }
-
-        .roses {
-            display: none;
+        .active {
+            background-color: rgb(48, 47, 47);
         }
     }
 }
@@ -195,7 +199,7 @@ footer {
         #product-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            margin: 0 30%;
+            margin: 0 20%;           
             align-items: flex-start;
             padding: 3rem;
         }
@@ -218,6 +222,13 @@ footer {
 
         #selection-details h5 {
             font-size: 1.1rem;
+        }
+
+        #carousel {
+            img {
+                max-width: 16rem;
+                max-height: 20rem;
+            }
         }
     }
 
