@@ -2,3 +2,20 @@
     padding: 0;
     margin: 0;
 }
+
+%flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+%flex-text-center {
+    display: flex; 
+    text-align: center;
+}
+
+%flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

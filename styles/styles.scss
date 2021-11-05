@@ -3,6 +3,11 @@
 
 @import "_variables";
 @import "_partials";
+@import "_mixins";
+
+html {
+    height: 100%;
+}
 
 body {
     box-sizing: border-box;
@@ -15,21 +20,28 @@ body {
 
 header {
     background-color: $dark-purple;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend %flex-center;
     padding: 10px;
     position: relative;
 
     img {
         position: absolute;
-        top: (61.6px/2) - 15px;
+        top: (width/2) - 15px;
         left: 3%;
+
+        @include small-laptop {
+            width: 45px;
+            height: 45px;
+        }
+
+        @include desktop {
+            width: 60px;
+            height: 60px;
+        }
     }
 
     #logo {
-        display: flex; 
-        text-align: center;
+        @extend %flex-text-center;
         font-size: 20px;
         &-left{
             color: $pink1;
@@ -42,14 +54,40 @@ header {
     h1 {
         font-family: 'Tangerine', cursive;
         @extend %extra-spacing;
+
+        @include tablet {
+            font-size: 4rem;
+        }  
+
+        @include small-laptop {
+            font-size: 5rem;
+        }
+
+        @include desktop {
+            font-size: 7rem;
+        }
     }   
 }
 
 main {
+    overflow-x: auto;
+
     #product {
         margin: 1rem auto;
         font-size: $small-font;
         text-align: center;
+
+        @include tablet {
+            font-size: 1.5 * $small-font;
+        }  
+
+        @include small-laptop {
+            font-size: 2 * $small-font;
+        }
+        
+        @include desktop {
+            font-size: 3 * $small-font;
+        }
 
         h2 {
             font-weight: bold;
@@ -63,22 +101,45 @@ main {
     }
 
     #product-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @extend %flex-column;
         border-top: 2px solid $dark-purple;
         padding: 3px;
+
+        @include small-laptop {
+            display: grid;
+            grid-template-columns: 1fr 1fr;          
+            align-items: flex-start;
+            padding: 5vh 3vw;
+        }
+
+        @include large-laptop {
+            padding: 5vh 12vw;
+        }
     }
 
     #product-details {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @extend %flex-column;
         padding: 5px;
+
+        @include small-laptop {
+            margin: 10vh auto;
+        }
     }
 
     #color-selecton label {
         font-size: $small-font;
+
+        @include tablet {
+            font-size: 1.5 * $small-font;
+        }  
+
+        @include small-laptop {
+            font-size: 2 * $small-font;
+        }
+
+        @include desktop {
+            font-size: 3 * $small-font;
+        }
     }
 
     #color-options {
@@ -87,11 +148,22 @@ main {
         font-size: $smaller-font;
         cursor: pointer;
         color: $dark-purple;
+
+        @include tablet {
+            font-size: 1.5 * $smaller-font;
+        }  
+
+        @include small-laptop {
+            font-size: 2 * $smaller-font;
+        }
+
+        @include desktop {
+            font-size: 3 * $smaller-font;
+        }
     }
 
     #selection-details {
-       display: flex;
-       flex-direction: column;
+       @extend %flex-column;
        flex-wrap: wrap;
        text-align: center;
 
@@ -100,27 +172,69 @@ main {
        }
 
        h5 {
-           margin-top: 1rem;
+           margin-top: 0.5rem;
+           font-size: $std-size;
+
+           @include tablet {
+            font-size: 1.5 * $std-size;
+            }     
+
+            @include small-laptop {
+                font-size: 2 * $std-size;
+            }
+
+            @include desktop {
+                font-size: 3 * $std-size;
+            }
        }
 
-       span {
-           font-size: $smaller-font;           
+       span, h6 {
+           font-size: $smaller-font;  
+
+           @include tablet {
+               font-size: 1.5 * $smaller-font;
+           }   
+           
+           @include small-laptop {
+            font-size: 2 * $smaller-font;
+           }
+
+           @include desktop {
+            font-size: 3 * $smaller-font;
+           }
        }
     }
 
     #carousel {
         margin: 10px auto;
         padding-bottom: 5rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @extend %flex-column;
         position: relative;
+
+        @include small-laptop {
+            padding-bottom: 8rem;
+        }
 
         img {
             position: relative;
-            max-width: 10rem;
-            max-height: 14rem;
+            max-width: 50vw;
+            max-height: 50vh;
             z-index: -1;
+
+            @include tablet {
+                max-width: 60vw;
+                max-height: 60vh;
+            }  
+
+            @include small-laptop {
+                max-width: 50vw;
+                max-height: 50vh;
+            }
+
+            @include small-laptop {
+                max-width: 60vw;
+                max-height: 60vh;
+            }
         }
 
         button {
@@ -133,6 +247,23 @@ main {
             text-shadow: 1px 1px 1px $dark-purple;
             font-weight: bold;
             font-size: 1.1rem;
+
+            @include tablet {
+                top: 35%;
+                font-size: 1.5rem;
+            }
+
+            @include small-laptop {
+                font-size: 1.8rem;
+            }
+
+            @include large-laptop {
+                font-size: 2.2rem;
+            }
+
+            @include desktop {
+                font-size: 4.5rem;
+            }
         }
 
         .backward {
@@ -158,10 +289,29 @@ main {
             border: 1px solid #ccc;
             background-color: white;
             border-radius: 50%;
+
+            @include tablet {
+                width: 0.5rem;
+                height: 0.5rem;
+            }
+
+            @include small-laptop {
+                width: 0.7rem;
+                height: 0.7rem;
+            }
+
+            @include desktop {
+                width: 1rem;
+                height: 1rem;
+            }
         }
 
         .indicator {
             margin-right: 0.5rem;
+
+            @include desktop {
+                margin-right: 1rem;
+            }
         }
 
         .active {
@@ -176,7 +326,33 @@ footer {
     width: 100%;
     background-color: $dark-purple;
     padding: 10px;
-    font-size: 0.8rem;
+    font-size: $smaller-font;
+
+    @include tablet {
+        font-size: 1.1 * $smaller-font;
+    }  
+
+    @include small-laptop {
+        font-size: 1.2 * $smaller-font;
+        
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        a:hover::after {
+            color: $pink1;
+        }
+
+        a::after {
+            content: "|";
+            margin: 10px;
+        }
+    }
+
+    @include desktop {
+        font-size: 1.8 * $smaller-font;
+    }
 
     a {
         display: block;
@@ -186,71 +362,6 @@ footer {
         cursor: pointer;
         &:hover {
             color: $pink2;
-        }
-    }
-}
-
-@media screen and (min-width: 769px) {
-    header h1 {
-        font-size: 3rem;
-    }
-
-    main {
-        #product-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            margin: 0 20%;           
-            align-items: flex-start;
-            padding: 3rem;
-        }
-
-        #product,
-        #color-selecton label {
-            font-size: 1.1rem;
-        }
-
-        #color-options,
-        #selection-details h6,
-        #selection-details span {
-            font-size: 1rem;
-        }
-
-        #selection-details h6,
-        #selection-details span {
-            padding: 0.5rem 0;
-        }
-
-        #selection-details h5 {
-            font-size: 1.1rem;
-        }
-
-        #carousel {
-            img {
-                max-width: 16rem;
-                max-height: 20rem;
-            }
-        }
-    }
-
-    footer {
-        font-size: 1rem;
-
-        nav {
-            display: flex;
-            justify-content: center;
-        }
-    
-        a:hover::after {
-            color: $pink1;
-        }
-    
-        a::after {
-            content: "|";
-            margin: 10px;
-        }
-    
-        a:last-child::after {
-            content: "";
         }
     }
 }

@@ -5,6 +5,42 @@ body, header h1, main #product h2, main #product h4, main #selection-details h5,
   margin: 0;
 }
 
+main #product-info, main #product-details, main #selection-details, main #carousel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header #logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+html {
+  height: 100%;
+}
+
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -16,30 +52,31 @@ body {
 
 header {
   background-color: #1f0a1f;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   padding: 10px;
   position: relative;
 }
 
 header img {
   position: absolute;
-  top: 15.8px;
+  top: width/2-15px;
   left: 3%;
 }
 
+@media screen and (min-width: 769px) {
+  header img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  header img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
 header #logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: center;
   font-size: 20px;
 }
 
@@ -55,10 +92,50 @@ header h1 {
   font-family: 'Tangerine', cursive;
 }
 
+@media screen and (min-width: 426px) {
+  header h1 {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  header h1 {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  header h1 {
+    font-size: 7rem;
+  }
+}
+
+main {
+  overflow-x: auto;
+}
+
 main #product {
   margin: 1rem auto;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-align: center;
+}
+
+@media screen and (min-width: 426px) {
+  main #product {
+    font-size: 1.35rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  main #product {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  main #product {
+    font-size: 2.7rem;
+  }
 }
 
 main #product h2 {
@@ -71,88 +148,176 @@ main #product h2, main #product h4 {
 }
 
 main #product-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   border-top: 2px solid #1f0a1f;
   padding: 3px;
 }
 
+@media screen and (min-width: 769px) {
+  main #product-info {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 5vh 3vw;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  main #product-info {
+    padding: 5vh 12vw;
+  }
+}
+
 main #product-details {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   padding: 5px;
 }
 
+@media screen and (min-width: 769px) {
+  main #product-details {
+    margin: 10vh auto;
+  }
+}
+
 main #color-selecton label {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+}
+
+@media screen and (min-width: 426px) {
+  main #color-selecton label {
+    font-size: 1.35rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  main #color-selecton label {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  main #color-selecton label {
+    font-size: 2.7rem;
+  }
 }
 
 main #color-options {
   border: 1px solid #1f0a1f;
   border-radius: 10%;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   cursor: pointer;
   color: #1f0a1f;
 }
 
+@media screen and (min-width: 426px) {
+  main #color-options {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  main #color-options {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  main #color-options {
+    font-size: 2.4rem;
+  }
+}
+
 main #selection-details {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   text-align: center;
 }
 
 main #selection-details h5 {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
 }
 
-main #selection-details span {
-  font-size: 0.7rem;
+@media screen and (min-width: 426px) {
+  main #selection-details h5 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  main #selection-details h5 {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  main #selection-details h5 {
+    font-size: 3rem;
+  }
+}
+
+main #selection-details span, main #selection-details h6 {
+  font-size: 0.8rem;
+}
+
+@media screen and (min-width: 426px) {
+  main #selection-details span, main #selection-details h6 {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  main #selection-details span, main #selection-details h6 {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  main #selection-details span, main #selection-details h6 {
+    font-size: 2.4rem;
+  }
 }
 
 main #carousel {
   margin: 10px auto;
   padding-bottom: 5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   position: relative;
+}
+
+@media screen and (min-width: 769px) {
+  main #carousel {
+    padding-bottom: 8rem;
+  }
 }
 
 main #carousel img {
   position: relative;
-  max-width: 10rem;
-  max-height: 14rem;
+  max-width: 50vw;
+  max-height: 50vh;
   z-index: -1;
+}
+
+@media screen and (min-width: 426px) {
+  main #carousel img {
+    max-width: 60vw;
+    max-height: 60vh;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  main #carousel img {
+    max-width: 50vw;
+    max-height: 50vh;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  main #carousel img {
+    max-width: 60vw;
+    max-height: 60vh;
+  }
 }
 
 main #carousel button {
@@ -165,6 +330,31 @@ main #carousel button {
   text-shadow: 1px 1px 1px #1f0a1f;
   font-weight: bold;
   font-size: 1.1rem;
+}
+
+@media screen and (min-width: 426px) {
+  main #carousel button {
+    top: 35%;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  main #carousel button {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  main #carousel button {
+    font-size: 2.2rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  main #carousel button {
+    font-size: 4.5rem;
+  }
 }
 
 main #carousel .backward {
@@ -196,8 +386,35 @@ main #carousel span {
   border-radius: 50%;
 }
 
+@media screen and (min-width: 426px) {
+  main #carousel span {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  main #carousel span {
+    width: 0.7rem;
+    height: 0.7rem;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  main #carousel span {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
 main #carousel .indicator {
   margin-right: 0.5rem;
+}
+
+@media screen and (min-width: 2560px) {
+  main #carousel .indicator {
+    margin-right: 1rem;
+  }
 }
 
 main #carousel .active {
@@ -213,55 +430,15 @@ footer {
   font-size: 0.8rem;
 }
 
-footer a {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  color: #f57df5;
-  cursor: pointer;
-}
-
-footer a:hover {
-  color: #f15079;
+@media screen and (min-width: 426px) {
+  footer {
+    font-size: 0.88rem;
+  }
 }
 
 @media screen and (min-width: 769px) {
-  header h1 {
-    font-size: 3rem;
-  }
-  main #product-info {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-    margin: 0 20%;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    padding: 3rem;
-  }
-  main #product,
-  main #color-selecton label {
-    font-size: 1.1rem;
-  }
-  main #color-options,
-  main #selection-details h6,
-  main #selection-details span {
-    font-size: 1rem;
-  }
-  main #selection-details h6,
-  main #selection-details span {
-    padding: 0.5rem 0;
-  }
-  main #selection-details h5 {
-    font-size: 1.1rem;
-  }
-  main #carousel img {
-    max-width: 16rem;
-    max-height: 20rem;
-  }
   footer {
-    font-size: 1rem;
+    font-size: 0.96rem;
   }
   footer nav {
     display: -webkit-box;
@@ -278,8 +455,23 @@ footer a:hover {
     content: "|";
     margin: 10px;
   }
-  footer a:last-child::after {
-    content: "";
+}
+
+@media screen and (min-width: 2560px) {
+  footer {
+    font-size: 1.44rem;
   }
+}
+
+footer a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #f57df5;
+  cursor: pointer;
+}
+
+footer a:hover {
+  color: #f15079;
 }
 /*# sourceMappingURL=styles.css.map */
